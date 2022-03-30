@@ -84,7 +84,11 @@
     <Compile Include="Assets\move.cs" />
     <Compile Include="Assets\script\cameraFollow.cs" />
     <Compile Include="Assets\script\enable.cs" />
-    <Compile Include="Assets\script\shoot.cs" />
+    <Compile Include="Assets\script\food.cs" />
+    <Compile Include="Assets\script\jump.cs" />
+    <Compile Include="Assets\script\man.cs" />
+    <Compile Include="Assets\script\rand_move.cs" />
+    <Compile Include="Assets\script\test.cs" />
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>E:/Program Files/Uninty2017/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
     </Reference>
