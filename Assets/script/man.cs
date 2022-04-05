@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class man : MonoBehaviour {
 	public float speed = 6.0F;
@@ -28,5 +29,24 @@ public class man : MonoBehaviour {
 		player.Move(move * Time.deltaTime);
 
 	}
-	
+
+	private void OnCollisionEnter(Collision other)
+	{
+		if (other.transform.tag == "monster")
+		{
+			SceneManager.LoadScene(0);
+		}
+	}
+
+	private void OnTriggerEnter(Collider other)
+	{
+		if(other.transform.tag == "end")
+		{
+#if UNITY_EDITOR
+			UnityEditor.EditorApplication.isPlaying = false;
+#else
+			Application.Quit();
+#endif
+		}
+	}
 }
