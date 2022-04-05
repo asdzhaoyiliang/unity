@@ -9,9 +9,21 @@ public class man : MonoBehaviour {
 	public float gravity = 150.0F;
 
 	private Vector3 move;
+
+	private Transform sph;
+
+	private GameObject sphObject;
+	private Rigidbody sphRigidbody;
 	// Use this for initialization
 	void Start () {
 		
+	}
+
+	void Awake()
+	{
+		sphObject = GameObject.FindWithTag("bullet");
+		sph = sphObject.transform;
+		sphRigidbody = sphObject.GetComponent<Rigidbody>();
 	}
 	
 	// Update is called once per frame
@@ -27,6 +39,26 @@ public class man : MonoBehaviour {
 
 		move.y -= gravity * Time.deltaTime ;
 		player.Move(move * Time.deltaTime);
+
+
+		if (Input.GetKey(KeyCode.Q))
+		{
+			sph.position = transform.TransformPoint(0, 1, 2);
+			sph.parent = transform;
+			sphRigidbody.isKinematic = true;
+		}
+
+		if (Input.GetKey(KeyCode.E))
+		{
+			if (sph.parent == transform)
+			{
+				transform.DetachChildren();
+				Vector3 v = transform.TransformDirection(0,0,10);
+
+				sphRigidbody.isKinematic = false;
+				sphRigidbody.AddForce(v,ForceMode.Impulse);
+			}
+		}
 
 	}
 

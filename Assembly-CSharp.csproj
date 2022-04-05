@@ -71,6 +71,7 @@
     <Compile Include="Assets\script\rand_move2.cs" />
     <Compile Include="Assets\script\restart.cs" />
     <Compile Include="Assets\script\test.cs" />
+    <Compile Include="Assets\script\test\position.cs" />
     <Reference Include="UnityEditor.Purchasing">
       <HintPath>/Users/zhaoyiliang/work/project/new/unity/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
     </Reference>
